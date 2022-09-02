@@ -17,7 +17,7 @@ export function FileUploader(onSuccess) {
 
       const data = new FormData();
 
-      for (let i = 0; i < files.length; i++) {
+      for (let i = 0; i <= files.length - 1; i++) {
         data.append("file", files[i]);
       }
 
