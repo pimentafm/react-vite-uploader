@@ -28,7 +28,12 @@ export function FileUploader(onSuccess) {
           onSuccess(response.data);
         })
         .catch(e => {
-          toast.error("Erro ao fazer upload");
+          if (e.response!.status === 202) {
+            console.log('error 202')
+          } else {
+            toast.error("Erro ao fazer upload");
+          }
+          
         });
     },
     [files, onSuccess],
